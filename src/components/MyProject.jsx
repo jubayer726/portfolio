@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const projects = [
   {
     title: "eTution Bd",
@@ -5,7 +7,15 @@ const projects = [
     image: "/projects/eTutionBd.jpg",
     description:
       "A secure MERN food-sharing platform featuring JWT-based API protection and full CRUD capabilities.",
-    tech: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB", "Firebase", "Motion"],
+    tech: [
+      "React",
+      "TailwindCSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Firebase",
+      "Motion",
+    ],
   },
   {
     title: "Share Meal Web",
@@ -17,11 +27,11 @@ const projects = [
   },
   {
     title: "WarmPaws Pet Care Servicing",
-    role: "Frontend",
+    role: "Fullstack",
     image: "/projects/WarmPaws.jpg",
     description:
       "A modern platform for discovering top games with Firebase Authentication and Framer Motion animations.",
-    tech: ["React", "TailwindCSS", "Firebase Auth", "JavaScript", "Motion"],
+    tech: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB", "Firebase"],
   },
 ];
 
@@ -57,8 +67,10 @@ const MyProjects = () => {
                   <h3 className="text-xl font-semibold text-slate-800 dark:text-white">
                     {project.title}
                   </h3>
-                  <span className="text-xs px-3 py-1 rounded-full
-                    bg-pink-500/10 text-pink-600 dark:bg-pink-500/20">
+                  <span
+                    className="text-xs px-3 py-1 rounded-full
+                    bg-pink-500/10 text-pink-600 dark:bg-pink-500/20"
+                  >
                     {project.role}
                   </span>
                 </div>
@@ -83,12 +95,12 @@ const MyProjects = () => {
                 </div>
 
                 {/* Button */}
-                <button
-                  className="mt-auto self-end px-5 py-2 rounded-lg text-sm font-medium
-                  bg-indigo-600 text-white hover:bg-indigo-700 transition"
+                <Link
+                  to={`/projects/${project.id}`}
+                  className="mt-auto self-end px-5 py-2 rounded-lg text-sm bg-indigo-600 text-white hover:bg-indigo-700 transition"
                 >
                   View Details
-                </button>
+                </Link>
               </div>
             </div>
           ))}

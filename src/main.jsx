@@ -9,6 +9,8 @@ import { ServicesPage } from "./pages/Services";
 import { SkillsPage } from "./pages/Skills";
 import { ProjectsPage } from "./pages/Projects";
 import { ContactPage } from "./pages/Contact";
+import MyProjects from "./components/MyProject.jsx";
+import ProjectDetails from "./pages/ProjectDetails.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -21,6 +23,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="skills" element={<SkillsPage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="/" element={<MyProjects />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>
